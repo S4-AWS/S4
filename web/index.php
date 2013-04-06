@@ -7,8 +7,20 @@ use Aws\Common\Enum\Region;
 
 // Instantiate the S3 client with your AWS credentials and desired AWS region
 $client = S3Client::factory(array(
-    'key'    => 'your-aws-access-key-id',
-    'secret' => 'your-aws-secret-access-key',
+    'key'    => CONFIG_S3_KEY,
+    'secret' => CONFIG_S3_SECRET,
 ));
 
-echo __FILE__;
+$bucket = 'aws-hackathon-phpsp-bucket-teste';
+
+$result = $client->createBucket(
+    array(
+        'Bucket' => $bucket
+    )
+);
+
+var_dump($result);
+
+// Wait until the bucket is created
+$client->waitUntil('BucketExists', array('Bucket' => $bucket));
+
