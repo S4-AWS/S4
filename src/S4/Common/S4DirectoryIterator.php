@@ -6,7 +6,7 @@ use \RecursiveIteratorIterator;
 use \RecursiveDirectoryIterator;
 
 class S4DirectoryIterator
-{
+{	
 	public $fileOrfolders = array();
 
 	public function receiveFolderUnzipedAndList($fileName)
@@ -14,10 +14,9 @@ class S4DirectoryIterator
 		$iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($fileName));
 		while($iterator->valid()) {
 		    if (!$iterator->isDot()) {
-		    	$i = $iterator->getSubPath() == '' ? 0 : $iterator->getSubPath();
 		    	$this->fileOrfolders[] = array(
-		    		$i => $iterator->getSubPathName(),
-		    		'fileName' => $this->getFileName($iterator->getSubPathName())
+		    		0 => $iterator->getSubPathName(),
+		    		1 => $this->getFileName($iterator->getSubPathName())
 		    	);
 		    }
 		    $iterator->next();
