@@ -15,11 +15,20 @@ class S4DirectoryIterator
 		while($iterator->valid()) {
 		    if (!$iterator->isDot()) {
 		    	$i = $iterator->getSubPath() == '' ? 0 : $iterator->getSubPath();
-		    	$this->fileOrfolders[] = array($i => $iterator->getSubPathName());
+		    	$this->fileOrfolders[] = array(
+		    		$i => $iterator->getSubPathName(),
+		    		'fileName' => $this->getFileName($iterator->getSubPathName())
+		    	);
 		    }
 		    $iterator->next();
 		}		
 
 		return $this->fileOrfolders;
+	}
+
+	public function getFileName($path)
+	{
+		$ex = explode(DIRECTORY_SEPARATOR, $path);
+		return end($ex);
 	}
 }

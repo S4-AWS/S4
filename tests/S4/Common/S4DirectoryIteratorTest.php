@@ -69,23 +69,30 @@ class S4DirectoryIteratorTest extends \PHPUnit_Framework_TestCase
 		$instance 	=  new S4DirectoryIterator;
 		$result 	= $instance->receiveFolderUnzipedAndList($this->site);
 		$expected 	= array(
-			0 => array(0 => 'img'),
-			1 => array('img' => 'img/img_4.txt'),
-			2 => array('img' => 'img/img_1.txt'),
-			3 => array('img' => 'img/img_2.txt'),
-			4 => array('img' => 'img/img_3.txt'),
-			5 => array('img' => 'img/img_5.txt'),
-			6 => array(0 => 'index.html'),
-			7 => array('js' => 'js/scripts_2.js'),
-			8 => array('js/vendor' => 'js/vendor/scripts_vendor_2.js'),
-			9 => array('js/vendor' => 'js/vendor/scripts_vendor_3.js'),
-			10 => array('js/vendor' => 'js/vendor/scripts_vendor_1.js'),
-			11 => array('js' => 'js/scripts_1.js'),
-			12 => array(0 => 'contato.html'),
-			13 => array('css' => 'css/style_2.css'),
-			14 => array('css' => 'css/style_1.css'),
-			15 => array(0 => 'evento.html')
+			0 => array(0 => 'img','fileName' => 'img'),
+			1 => array('img' => 'img/img_4.txt','fileName' => 'img_4.txt'),
+			2 => array('img' => 'img/img_1.txt','fileName' => 'img_1.txt'),
+			3 => array('img' => 'img/img_2.txt','fileName' => 'img_2.txt'),
+			4 => array('img' => 'img/img_3.txt','fileName' => 'img_3.txt'),
+			5 => array('img' => 'img/img_5.txt','fileName' => 'img_5.txt'),
+			6 => array(0 => 'index.html','fileName' => 'index.html'),
+			7 => array('js' => 'js/scripts_2.js','fileName' => 'scripts_2.js'),
+			8 => array('js/vendor' => 'js/vendor/scripts_vendor_2.js','fileName' => 'scripts_vendor_2.js'),
+			9 => array('js/vendor' => 'js/vendor/scripts_vendor_3.js','fileName' => 'scripts_vendor_3.js'),
+			10 => array('js/vendor' => 'js/vendor/scripts_vendor_1.js','fileName' => 'scripts_vendor_1.js'),
+			11 => array('js' => 'js/scripts_1.js','fileName' => 'scripts_1.js'),
+			12 => array(0 => 'contato.html','fileName' => 'contato.html'),
+			13 => array('css' => 'css/style_2.css','fileName' => 'style_2.css'),
+			14 => array('css' => 'css/style_1.css','fileName' => 'style_1.css'),
+			15 => array(0 => 'evento.html','fileName' => 'evento.html')
 		);
 		$this->assertEquals($result, $expected, 'The espected content of list files is different of expected');
+	}
+
+	public function testGetFileName()
+	{
+		$instance 	= new S4DirectoryIterator;
+		$result  	= $instance->getFileName('/tmp/web/site/index.html');
+		$this->assertEquals('index.html', $result); 
 	}
 }
