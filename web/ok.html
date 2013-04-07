@@ -49,14 +49,15 @@
       }
     </style>
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="jasny-bootstrap/css/bootstrap-fileupload.min.css" rel="stylesheet">
     <style type="text/css">
     .logo {
-        background-image: url("images/logo_s4_72px.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        text-indent: -9999px;
-      }
-      </style>
+      background-image: url("images/logo_s4_72px.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      text-indent: -9999px;
+    }
+    </style>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -78,7 +79,7 @@
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
           <li><a href="/">Home</a></li>
-          <li class="active"><a href="sobre.html">Sobre</a></li>
+          <li><a href="/sobre.html">Sobre</a></li>
         </ul>
         <h3 class="muted"><img src="images/logo_s4.jpg" alt="S4" width="25px" height="25px">&nbsp;Super Simple Storage Server</h3>
       </div>
@@ -87,29 +88,19 @@
 
       <div class="jumbotron">
         <h1 class="logo">S4</h1>
-        <h2>O que é?</h2>
+        <h2>Tudo certo!</h2>
 
         <hr>
         
-        <p>O projeto foi criado para o Hackathon PHP SDK - AWS</p>
+        <p>Seu hotsite foi publicado na Amazon S3, endereço:</p>
+        <p class="lead"><a class="btn btn-primary" target="_blank" href="http://example-bucket.s3-website-region.amazonaws.com">http://example-bucket.s3-website-region.amazonaws.com</a></p>
 
-        <p>O S4, Super Simple Storage Server, se propõe a fornecer uma
-          interface simples para Frontenders que não querem se preocupar com
-          todas as configurações iniciais para colocar um servidor na AWS.</p>
-
-        <p class="lead">Seu objetivo é fornecer um meio simples para gerar websites
-          estáticos usando a infraestrutura de Cloud da Amazon.</p>
-
-        <p>A Amazon já fornece o serviço S3, que permite servir conteúdo
-          estáticos. Agora, com o S4, passsando apenas um arquivo ".zip",
-          com o contéudo do seu projeto, você já vai receber uma URL
-          pronta para compartilhar no mundo!</p>
-
-          <a href="/" class="btn btn-large btn-info">Use agora! &raquo;&raquo;</a>
+          <hr>
+          
+          <a href="/" class="btn btn-link">Página inicial &raquo;</a>
+          
 
       </div>
-
-      
 
       <div class="footer">
         <p>Projeto criado para o <a
@@ -145,6 +136,7 @@
     <script src="assets/js/bootstrap-collapse.js"></script>
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="jasny-bootstrap/js/bootstrap-fileupload.min.js"></script>
 
   </body>
 </html>
