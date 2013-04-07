@@ -9,7 +9,7 @@ class S4DirectoryIterator
 {
 	public $fileOrfolders = array();
 
-	public function receiveFolderOrFileUnzipedAndList($fileName)
+	public function receiveFolderUnzipedAndList($fileName)
 	{
 		$iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($fileName));
 		while($iterator->valid()) {

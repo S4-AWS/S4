@@ -67,7 +67,7 @@ class S4DirectoryIteratorTest extends \PHPUnit_Framework_TestCase
 	public function testListFilesAndFoldersWithValidArgumentsSholdWork()
 	{
 		$instance 	=  new S4DirectoryIterator;
-		$result 	= $instance->receiveFolderOrFileUnzipedAndList($this->site);
+		$result 	= $instance->receiveFolderUnzipedAndList($this->site);
 		$expected 	= array(
 			0 => array(0 => 'img'),
 			1 => array('img' => 'img/img_4.txt'),
